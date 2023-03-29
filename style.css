@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    transition: 0.5s;
 }
 
 .sci{
@@ -20,6 +21,26 @@
 
 .sci li{
     list-style: none;
+}
+
+.sci li::before{
+   content: attr(data-text); 
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,calc(-50% + 120px));;
+   font-size: 14vw;
+   pointer-events: none;
+   font-weight: 700;
+   transition: 0.5s;
+   opacity: 0;
+}
+.js-title-glare{
+    border-radius: 10px;
+}
+.sci li:hover::before{
+    opacity: 0.1;
+    transform: translate(-50%,calc(-50% + 150px));
 }
 
 .sci li a{
@@ -56,5 +77,14 @@
 
 .sci li a:hover.instagram{
     background: #e4405f;
+}
+
+.sci li a .fa{
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+.sci li a:hover .fa{
+    color: #fff ;
 }
 
